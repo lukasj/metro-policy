@@ -12,12 +12,12 @@
  * WS-Policy implementation for Metro
  */
 module com.sun.xml.ws.policy {
-    requires transitive java.activation;
+
     requires transitive java.xml;
-    requires com.sun.istack.runtime;
     requires java.logging;
+
+    requires com.sun.istack.runtime;
     requires com.sun.xml.txw2;
-    requires java.annotation;
 
     exports com.sun.xml.ws.policy.sourcemodel.wspolicy;
     exports com.sun.xml.ws.policy.privateutil;

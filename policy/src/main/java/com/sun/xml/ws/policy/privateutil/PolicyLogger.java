@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -11,10 +11,11 @@
 package com.sun.xml.ws.policy.privateutil;
 
 import com.sun.istack.logging.Logger;
-import java.lang.reflect.Field;
+import com.sun.xml.ws.policy.spi.LoggingProvider;
+import java.util.ServiceLoader;
 
 /**
- * This is a helper class that provides some conveniece methods wrapped around the
+ * This is a helper class that provides some convenience methods wrapped around the
  * standard {@link java.util.logging.Logger} interface.
  *
  * @author Marek Potociar
@@ -59,21 +60,10 @@ public final class PolicyLogger extends Logger {
     }
 
     private static String getLoggingSubsystemName() {
-        String loggingSubsystemName = "wspolicy";
-        try {
-            // Looking up JAX-WS class at run-time, so that we don't need to depend
-            // on it at compile-time.
-            Class jaxwsConstants = Class.forName("com.sun.xml.ws.util.Constants");
-            Field loggingDomainField = jaxwsConstants.getField("LoggingDomain");
-            Object loggingDomain = loggingDomainField.get(null);
-            loggingSubsystemName = loggingDomain.toString().concat(".wspolicy");
-        } catch (RuntimeException e) {
-            // if we catch an exception, we stick with the default name
-            // this catch is redundant but works around a Findbugs warning
-        } catch (Exception e) {
-            // if we catch an exception, we stick with the default name
+        for (LoggingProvider p : ServiceLoader.load(LoggingProvider.class)) {
+            return p.getLoggingSubsystemName().concat(".wspolicy");
         }
-        return loggingSubsystemName;
+        return "wspolicy";
     }
 
 }

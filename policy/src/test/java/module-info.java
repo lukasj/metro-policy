@@ -24,6 +24,7 @@ open module com.sun.xml.ws.policy {
     exports com.sun.xml.ws.policy.subject;
     exports com.sun.xml.ws.policy.privateutil /* TODO: to metro-wsit only ! */;
 
+    uses com.sun.xml.ws.policy.spi.LoggingProvider;
     uses com.sun.xml.ws.policy.spi.PolicyAssertionValidator;
     uses com.sun.xml.ws.policy.spi.PolicyAssertionCreator;
     uses com.sun.xml.ws.policy.spi.PrefixMapper;

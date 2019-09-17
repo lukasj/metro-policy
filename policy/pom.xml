@@ -80,10 +80,9 @@
         <spotbugs.exclude>${project.basedir}/exclude.xml</spotbugs.exclude>
         <spotbugs.skip>false</spotbugs.skip>
         <spotbugs.threshold>Low</spotbugs.threshold>
-        <spotbugs.version>3.1.11</spotbugs.version>
+        <spotbugs.version>3.1.12.1</spotbugs.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <netbeans.hint.license>policy</netbeans.hint.license>
         <istack.version>3.0.9</istack.version>
         <legal.doc.source>${project.basedir}/..</legal.doc.source>
     </properties>
@@ -215,19 +214,30 @@
                             </resources>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>add-test-resource</id>
+                        <phase>generate-test-resources</phase>
+                        <goals>
+                            <goal>add-test-resource</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/resources</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>9</source>
+                    <target>9</target>
+                </configuration>
                 <executions>
-                    <execution>
-                        <id>default-compile</id>
-                        <configuration>
-                            <source>9</source>
-                            <target>9</target>
-                        </configuration>
-                    </execution>
                     <execution>
                         <id>base-compile</id>
                         <goals>
@@ -235,6 +245,8 @@
                         </goals>
                         <configuration>
                             <release>8</release>
+                            <source>1.8</source>
+                            <target>1.8</target>
                             <excludes>
                                 <exclude>module-info.java</exclude>
                             </excludes>
@@ -352,8 +364,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <configuration>
-                    <sourcepath>${project.build.sourceDirectory}:${project.build.directory}/generated-sources/rsrc-gen</sourcepath>
-                    <additionalOptions>-Xdoclint:none</additionalOptions>
+                    <release>11</release>
+                    <doclint>none</doclint>
                 </configuration>
             </plugin>
         </plugins>

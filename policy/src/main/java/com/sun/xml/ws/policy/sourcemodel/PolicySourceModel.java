@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -26,6 +26,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Queue;
+import java.util.ServiceLoader;
 import java.util.Set;
 import javax.xml.namespace.QName;
 
@@ -42,11 +43,8 @@ public class PolicySourceModel implements Cloneable {
 
     private static final Map<String, String> DEFAULT_NAMESPACE_TO_PREFIX = new HashMap<String, String>();
     static {
-        PrefixMapper[] prefixMappers = PolicyUtils.ServiceProvider.load(PrefixMapper.class);
-        if (prefixMappers != null) {
-            for (PrefixMapper mapper: prefixMappers) {
-                DEFAULT_NAMESPACE_TO_PREFIX.putAll(mapper.getPrefixMap());
-            }
+        for (PrefixMapper mapper: ServiceLoader.load(PrefixMapper.class)) {
+            DEFAULT_NAMESPACE_TO_PREFIX.putAll(mapper.getPrefixMap());
         }
         
         for (NamespaceVersion version : NamespaceVersion.values()) {

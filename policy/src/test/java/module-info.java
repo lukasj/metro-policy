@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, 2019 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -8,10 +8,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-/**
- * WS-Policy implementation for Metro
- */
-module com.sun.xml.ws.policy {
+open module com.sun.xml.ws.policy {
 
     requires transitive java.xml;
     requires java.logging;
@@ -30,4 +27,8 @@ module com.sun.xml.ws.policy {
     uses com.sun.xml.ws.policy.spi.PolicyAssertionValidator;
     uses com.sun.xml.ws.policy.spi.PolicyAssertionCreator;
     uses com.sun.xml.ws.policy.spi.PrefixMapper;
+
+    provides com.sun.xml.ws.policy.spi.PolicyAssertionValidator with com.sun.xml.ws.policy.spi.MockPolicyAssertionValidator;
+    provides com.sun.xml.ws.policy.spi.PolicyAssertionCreator with com.sun.xml.ws.policy.privateutil.MockPolicyAssertionCreator;
+
 }

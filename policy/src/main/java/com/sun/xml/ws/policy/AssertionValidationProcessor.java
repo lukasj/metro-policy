@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -11,12 +11,12 @@
 package com.sun.xml.ws.policy;
 
 import com.sun.xml.ws.policy.privateutil.PolicyLogger;
-import com.sun.xml.ws.policy.privateutil.PolicyUtils;
 import com.sun.xml.ws.policy.spi.PolicyAssertionValidator;
 import static com.sun.xml.ws.policy.privateutil.LocalizationMessages.WSP_0076_NO_SERVICE_PROVIDERS_FOUND;
 
 import java.util.Collection;
 import java.util.LinkedList;
+import java.util.ServiceLoader;
 
 /**
  * Provides methods for assertion validation.
@@ -52,7 +52,7 @@ public class AssertionValidationProcessor {
      */
     protected AssertionValidationProcessor(final Collection<PolicyAssertionValidator> policyValidators)
             throws PolicyException {
-        for(PolicyAssertionValidator validator : PolicyUtils.ServiceProvider.load(PolicyAssertionValidator.class)) {
+        for(PolicyAssertionValidator validator : ServiceLoader.load(PolicyAssertionValidator.class)) {
             validators.add(validator);
         }
         if (policyValidators != null) {

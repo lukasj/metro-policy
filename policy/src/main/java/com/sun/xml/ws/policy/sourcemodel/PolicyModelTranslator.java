@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -28,6 +28,7 @@ import com.sun.xml.ws.policy.privateutil.PolicyLogger;
 import com.sun.xml.ws.policy.privateutil.PolicyUtils;
 import com.sun.xml.ws.policy.spi.AssertionCreationException;
 import com.sun.xml.ws.policy.spi.PolicyAssertionCreator;
+import java.util.ServiceLoader;
 
 /**
  * This class provides a method for translating a {@link PolicySourceModel} structure to a normalized {@link Policy} expression.
@@ -126,8 +127,7 @@ public class PolicyModelTranslator {
         LOGGER.entering(creators);
 
         final Collection<PolicyAssertionCreator> allCreators = new LinkedList<PolicyAssertionCreator>();
-        final PolicyAssertionCreator[] discoveredCreators = PolicyUtils.ServiceProvider.load(PolicyAssertionCreator.class);
-        for (PolicyAssertionCreator creator : discoveredCreators) {
+        for (PolicyAssertionCreator creator : ServiceLoader.load(PolicyAssertionCreator.class)) {
             allCreators.add(creator);
         }
         if (creators != null) {

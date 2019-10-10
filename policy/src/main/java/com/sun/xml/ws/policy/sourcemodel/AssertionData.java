@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -25,7 +25,7 @@ import javax.xml.namespace.QName;
 /**
  * Wrapper class for possible data that each "assertion" and "assertion parameter content" policy source model node may
  * have attached.
- * <p/>
+ * <br>
  * This data, when stored in an 'assertion' model node, is intended to be used as input parameter when creating
  * {@link com.sun.xml.ws.policy.PolicyAssertion} objects via {@link com.sun.xml.ws.policy.spi.PolicyAssertionCreator}
  * implementations.
@@ -219,7 +219,7 @@ public final class AssertionData implements Cloneable, Serializable {
 
     /**
      * Returns the disconnected map of attributes attached to the assertion.
-     * <p/>
+     * <br>
      * 'Disconnected' means, that the result of this method will not be synchronized with any consequent assertion's attribute modification. It is
      * also important to notice that a manipulation with returned set of attributes will not have any effect on the actual assertion's
      * attributes.
@@ -236,7 +236,7 @@ public final class AssertionData implements Cloneable, Serializable {
     /**
      * Returns the disconnected set of attributes attached to the assertion. Each attribute is represented as a single
      * {@code Map.Entry<attributeName, attributeValue>} element.
-     * <p/>
+     * <br>
      * 'Disconnected' means, that the result of this method will not be synchronized with any consequent assertion's attribute modification. It is
      * also important to notice that a manipulation with returned set of attributes will not have any effect on the actual assertion's
      * attributes.

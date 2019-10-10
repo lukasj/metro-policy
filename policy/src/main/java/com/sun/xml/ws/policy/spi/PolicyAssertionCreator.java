@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -20,7 +20,7 @@ import java.util.Collection;
  * factories. The implementations are discovered using service provider mechanism 
  * described in the 
  * <a href="http://java.sun.com/j2se/1.5.0/docs/guide/jar/jar.html#Service%20Provider">J2SE JAR File Specification</a>.
- *<p/>
+ *<br>
  * Every implementation of policy assertion creator is expected to <b>fully</b> 
  * handle the creation of assertions for the domain (namespace) it claims to 
  * support by returning the namespace string from the {link #getSupportedDomainNamespaceUri()} 
@@ -36,7 +36,7 @@ public interface PolicyAssertionCreator {
     /**
      * This method returns the namespace URIs of the domains that are supported by the implementation of
      * this inteface. There can be multiple URIs supported per single implementation.
-     * <p/>
+     * <br>
      * Supporting domain namespace URI means that particular {@code PolicyAssertionCreator} implementation
      * is able to create assertion instances for the domains identified by the namespace URIs returned from this
      * method. It is required that each {@code PolicyAssertionCreator} implementation handles the policy
@@ -53,7 +53,7 @@ public interface PolicyAssertionCreator {
      * Creates domain-specific policy assertion instance according to assertion data provided. For the provided
      * assertion data and this policy assertion creator instance, it will allways be true that assertion namespace 
      * URI equals to one of supported domain namespace URIs.
-     *<p/>
+     *<br>
      * Additional method parameter (which must not be {@code null}) supplied by the policy framework specifies a default policy
      * assertion creator that might be used to handle creation of unsupported domain assertion in the default way. This is
      * to give policy assertion creator a chance to handle also creation of "unsupported" domain assertions and to encourage

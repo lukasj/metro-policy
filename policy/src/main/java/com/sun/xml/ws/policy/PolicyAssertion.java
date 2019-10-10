@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -23,7 +23,7 @@ import com.sun.xml.ws.policy.sourcemodel.ModelNode;
  * Base class for any policy assertion implementations. It defines the common 
  * interface and provides some default implentation for common policy assertion 
  * functionality.
- * <p/>
+ * <br>
  * NOTE: Assertion implementers should not extend this class directly. {@link SimpleAssertion} 
  * or {@link ComplexAssertion} should be used as a base class instead.
  * 
@@ -98,7 +98,7 @@ public abstract class PolicyAssertion {
 
     /**
      * Method specifies whether the assertion is otpional or not.
-     * <p/>
+     * <br>
      * This is a default implementation that may be overriden. The method returns {@code true} if the {@code wsp:optional} attribute
      * is present on the assertion and its value is {@code 'true'}. Otherwise the method returns {@code false}.
      *
@@ -110,7 +110,7 @@ public abstract class PolicyAssertion {
 
     /**
      * Method specifies whether the assertion is ignorable or not.
-     * <p/>
+     * <br>
      * This is a default implementation that may be overriden. The method returns {@code true} if the {@code wsp:Ignorable} attribute
      * is present on the assertion and its value is {@code 'true'}. Otherwise the method returns {@code false}.
      *
@@ -132,7 +132,7 @@ public abstract class PolicyAssertion {
     /**
      * Returns the disconnected set of attributes attached to the assertion. Each attribute is represented as a single
      * {@code Map.Entry<attributeName, attributeValue>} element.
-     * <p/>
+     * <br>
      * 'Disconnected' means, that the result of this method will not be synchronized with any consequent assertion's attribute modification. It is
      * also important to notice that a manipulation with returned set of attributes will not have any effect on the actual assertion's
      * attributes.
@@ -145,7 +145,7 @@ public abstract class PolicyAssertion {
 
     /**
      * Returns the disconnected map of attributes attached to the assertion.
-     * <p/>
+     * <br>
      * 'Disconnected' means, that the result of this method will not be synchronized with any consequent assertion's attribute modification. It is
      * also important to notice that a manipulation with returned set of attributes will not have any effect on the actual assertion's
      * attributes.

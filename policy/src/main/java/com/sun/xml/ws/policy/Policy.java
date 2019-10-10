@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -103,20 +103,20 @@ public class Policy implements Iterable<AssertionSet> {
     private final String toStringName;
     
     /**
-     * The factory method creates an <b>immutable</b> policy instance which represents a <emph>'nothing allowed'</emph>
+     * The factory method creates an <b>immutable</b> policy instance which represents a <strong>'nothing allowed'</strong>
      * policy expression. The policy is created using the latest namespace version supported.
      *
-     * @return policy instance which represents a <emph>'nothing allowed'</emph> (no policy alternatives).
+     * @return policy instance which represents a <strong>'nothing allowed'</strong> (no policy alternatives).
      */
     public static Policy createNullPolicy() {
         return ANONYMOUS_NULL_POLICY;
     }
     
     /**
-     * The factory method creates an <b>immutable</b> policy instance which represents a <emph>'anything allowed'</emph>
+     * The factory method creates an <b>immutable</b> policy instance which represents a <strong>'anything allowed'</strong>
      * policy expression. The policy is created using the latest namespace version supported.
      *
-     * @return policy instance which represents a <emph>'anything allowed'</emph> (empty policy alternative with no plicy
+     * @return policy instance which represents a <strong>'anything allowed'</strong> (empty policy alternative with no plicy
      * assertions prescribed).
      */
     public static Policy createEmptyPolicy() {
@@ -124,12 +124,12 @@ public class Policy implements Iterable<AssertionSet> {
     }
     
     /**
-     * The factory method creates an <b>immutable</b> policy instance which represents a <emph>'nothing allowed'</emph>
+     * The factory method creates an <b>immutable</b> policy instance which represents a <strong>'nothing allowed'</strong>
      * policy expression. The policy is created using the latest namespace version supported.
      *
      * @param name global URI of the policy. May be {@code null}.
      * @param policyId local URI of the policy. May be {@code null}.
-     * @return policy instance which represents a <emph>'nothing allowed'</emph> (no policy alternatives).
+     * @return policy instance which represents a <strong>'nothing allowed'</strong> (no policy alternatives).
      */
     public static Policy createNullPolicy(final String name, final String policyId) {
         if (name == null && policyId == null) {
@@ -140,13 +140,13 @@ public class Policy implements Iterable<AssertionSet> {
     }
     
     /**
-     * The factory method creates an <b>immutable</b> policy instance which represents a <emph>'nothing allowed'</emph>
+     * The factory method creates an <b>immutable</b> policy instance which represents a <strong>'nothing allowed'</strong>
      * policy expression. The policy is created using the latest namespace version supported.
      *
      * @param nsVersion Policy namespace version to be used when marshalling the policy expression
      * @param name global URI of the policy. May be {@code null}.
      * @param policyId local URI of the policy. May be {@code null}.
-     * @return policy instance which represents a <emph>'nothing allowed'</emph> (no policy alternatives).
+     * @return policy instance which represents a <strong>'nothing allowed'</strong> (no policy alternatives).
      */
     public static Policy createNullPolicy(final NamespaceVersion nsVersion, final String name, final String policyId) {
         if ((nsVersion == null || nsVersion == NamespaceVersion.getLatestVersion()) && name == null && policyId == null) {
@@ -157,13 +157,13 @@ public class Policy implements Iterable<AssertionSet> {
     }
     
     /**
-     * The factory method creates an <b>immutable</b> policy instance which represents a <emph>'anything allowed'</emph>
+     * The factory method creates an <b>immutable</b> policy instance which represents a <strong>'anything allowed'</strong>
      * policy expression. The policy is created using the latest namespace version supported.
      *
      * @param name global URI of the policy. May be {@code null}.
      * @param policyId local URI of the policy. May be {@code null}.
      *
-     * @return policy instance which represents a <emph>'anything allowed'</emph> (empty policy alternative with no plicy
+     * @return policy instance which represents a <strong>'anything allowed'</strong> (empty policy alternative with no plicy
      * assertions prescribed).
      */
     public static Policy createEmptyPolicy(final String name, final String policyId) {
@@ -175,14 +175,14 @@ public class Policy implements Iterable<AssertionSet> {
     }
     
     /**
-     * The factory method creates an <b>immutable</b> policy instance which represents a <emph>'anything allowed'</emph>
+     * The factory method creates an <b>immutable</b> policy instance which represents a <strong>'anything allowed'</strong>
      * policy expression. The policy is created using the latest namespace version supported.
      *
      * @param nsVersion Policy namespace version to be used when marshalling the policy expression
      * @param name global URI of the policy. May be {@code null}.
      * @param policyId local URI of the policy. May be {@code null}.
      *
-     * @return policy instance which represents a <emph>'anything allowed'</emph> (empty policy alternative with no plicy
+     * @return policy instance which represents a <strong>'anything allowed'</strong> (empty policy alternative with no plicy
      * assertions prescribed).
      */
     public static Policy createEmptyPolicy(final NamespaceVersion nsVersion, final String name, final String policyId) {

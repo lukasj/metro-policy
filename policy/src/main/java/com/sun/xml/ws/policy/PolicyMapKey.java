@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -17,9 +17,9 @@ import javax.xml.namespace.QName;
 
 /**
  * This class provides implementation of PolicyMapKey interface to be used in connection with {@link PolicyMap}.
- * Instances of the class are created by a call to one of {@link PolicyMap} <code>createWsdl<emph>XXX</emph>PolicyMapKey(...)</code>
+ * Instances of the class are created by a call to one of {@link PolicyMap} <code>createWsdl<strong>XXX</strong>PolicyMapKey(...)</code>
  * methods.
- * <p/>
+ * <br>
  * The class wraps scope information and adds a package setter method to allow injection of actual equality comparator/tester. This injection
  * is made within a <code>get...</code> call on {@link PolicyMap}, before the actual scope map search is performed.
  * 

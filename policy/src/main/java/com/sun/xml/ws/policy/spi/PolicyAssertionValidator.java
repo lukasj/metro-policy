@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -99,7 +99,7 @@ public interface PolicyAssertionValidator {
     /**
      * Each service provider that implements this SPI must make sure to identify all possible domains it supports.
      * This operation must be implemented as idempotent (must return same values on multiple calls).
-     * <p/>
+     * <br>
      * It is legal for two or more {@code PolicyAssertionValidator}s to support the same domain. In such case,
      * the most significant result returned from validation methods will be eventually assigned to the assertion.
      * The significance of validation results is as follows (from most to least significant):

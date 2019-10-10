@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -61,7 +61,7 @@ public abstract class PolicyMapMutator {
     /**
      * Disconnects the mutator from the policy map object it is connected to. Method must be called prior to connecting this
      * mutator instance to another policy map.
-     * <p/>
+     * <br>
      * This operation is irreversible: you cannot connect the mutator to the same policy map instance once you disconnect from it. 
      * Multiple consequent calls of this method will have no effect.
      */

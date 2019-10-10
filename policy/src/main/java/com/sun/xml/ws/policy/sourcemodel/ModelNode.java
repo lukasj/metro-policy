@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -358,7 +358,7 @@ public final class ModelNode implements Iterable<ModelNode>, Cloneable {
     /**
      * The method may be used to set or replace assertion data set for this node. If there are assertion data set already,
      * those are replaced by a new reference and eventualy returned from the method.
-     * <p/>
+     * <br>
      * This method is supported only in case this model node instance's type is {@code ASSERTION} or {@code ASSERTION_PARAMETER_NODE}.
      * If used from other node types, an exception is thrown.
      *
@@ -450,7 +450,7 @@ public final class ModelNode implements Iterable<ModelNode>, Cloneable {
     /**
      * An {@code Object.equals(Object obj)} method override. Method ignores the parent source model. It means that two
      * model nodes may be the same even if they belong to different models.
-     * <p/>
+     * <br>
      * If parent model comparison is desired, it must be accomplished separately. To perform that, the reference equality
      * test is sufficient ({@code nodeA.getParentModel() == nodeB.getParentModel()}), since all model nodes are created
      * for specific model instances.

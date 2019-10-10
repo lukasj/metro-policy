@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -36,7 +36,7 @@ public enum XmlToken {
      * Resolves URI represented as a String into an enumeration value. If the URI 
      * doesn't represent any existing enumeration value, method returns {@code null}
      * 
-     * @param uri
+     * @param name
      * @return Enumeration value that represents given URI or {@code null} if 
      * no enumeration value exists for given URI.
      */

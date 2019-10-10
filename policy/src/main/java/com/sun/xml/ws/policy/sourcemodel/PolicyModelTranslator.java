@@ -270,7 +270,7 @@ public class PolicyModelTranslator {
     
     /**
      * Decomposes the unprocessed alternative content into two different collections:
-     * <p/>
+     * <br>
      * Content of 'EXACTLY_ONE' child nodes is expanded and placed in one list and
      * 'ASSERTION' nodes are placed into other list. Direct 'ALL' and 'POLICY' child nodes are 'dissolved' in the process.
      *

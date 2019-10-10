@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -494,7 +494,7 @@ public final class PolicyMap implements Iterable<Policy> {
     }
     
     /**
-     * Creates a service policy scope <emph>locator</emph> object, that serves as a access key into
+     * Creates a service policy scope <strong>locator</strong> object, that serves as a access key into
      * a {@code PolicyMap} where actual service policy scope for given service can be retrieved.
      *
      * @param service qualified name of the service. Must not be {@code null}.
@@ -508,7 +508,7 @@ public final class PolicyMap implements Iterable<Policy> {
     }
     
     /**
-     * Creates an endpoint policy scope <emph>locator</emph> object, that serves as a access key into
+     * Creates an endpoint policy scope <strong>locator</strong> object, that serves as a access key into
      * a {@code PolicyMap} where actual endpoint policy scope for given endpoint can be retrieved.
      *
      * @param service qualified name of the service. Must not be {@code null}.
@@ -523,7 +523,7 @@ public final class PolicyMap implements Iterable<Policy> {
     }
     
     /**
-     * Creates an operation policy scope <emph>locator</emph> object, that serves as a access key into
+     * Creates an operation policy scope <strong>locator</strong> object, that serves as a access key into
      * a {@code PolicyMap} where actual operation policy scope for given bound operation can be retrieved.
      *
      * @param service qualified name of the service. Must not be {@code null}.
@@ -536,11 +536,11 @@ public final class PolicyMap implements Iterable<Policy> {
     }
     
     /**
-     * Creates an input/output message policy scope <emph>locator</emph> object identified by a bound operation, that serves as a
+     * Creates an input/output message policy scope <strong>locator</strong> object identified by a bound operation, that serves as a
      * access key into {@code PolicyMap} where actual input/output message policy scope for given input message of a bound operation
      * can be retrieved.
-     * <p/>
-     * The method returns a key that is compliant with <emph>WSDL 1.1 Basic Profile Specification</emph>, according to which there
+     * <br>
+     * The method returns a key that is compliant with <strong>WSDL 1.1 Basic Profile Specification</strong>, according to which there
      * should be no two operations with the same name in a single port type definition.
      *
      * @param service qualified name of the service. Must not be {@code null}.
@@ -554,11 +554,11 @@ public final class PolicyMap implements Iterable<Policy> {
     }
     
     /**
-     * Creates a fault message policy scope <emph>locator</emph> object identified by a bound operation, that serves as a
+     * Creates a fault message policy scope <strong>locator</strong> object identified by a bound operation, that serves as a
      * access key into {@code PolicyMap} where the actual fault message policy scope for one of the faults of a bound operation
      * can be retrieved.
-     * <p/>
-     * The method returns a key that is compliant with the <emph>WSDL 1.1 Basic Profile Specification</emph>, according to which there
+     * <br>
+     * The method returns a key that is compliant with the <strong>WSDL 1.1 Basic Profile Specification</strong>, according to which there
      * should be no two operations with the same name in a single port type definition.
      *
      * @param service qualified name of the service. Must not be {@code null}.

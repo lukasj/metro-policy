@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -167,7 +167,7 @@ public final class AssertionSet implements Iterable<PolicyAssertion>, Comparable
     
     /**
      * Creates and returns new assertion set holding content of all provided policy assertion sets.
-     * <p/>
+     * <br>
      * This method should not be used to perform a merge of general Policy instances. A client should be aware of the
      * method's result meaning and the difference between merge of Policy instances and merge of AssertionSet instances.
      *

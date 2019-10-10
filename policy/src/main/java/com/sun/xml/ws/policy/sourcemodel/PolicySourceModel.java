@@ -205,7 +205,7 @@ public class PolicySourceModel implements Cloneable {
 
     /**
      * An {@code Object.equals(Object obj)} method override.
-     * <p/>
+     * <br>
      * When child nodes are tested for equality, the parent policy source model is not considered. Thus two different
      * policy source models instances may be equal based on their node content.
      */
@@ -278,7 +278,7 @@ public class PolicySourceModel implements Cloneable {
 
     /**
      * Returns a boolean value indicating whether this policy source model contains references to another policy source models.
-     * <p/>
+     * <br>
      * Every source model that references other policies must be expanded before it can be translated into a Policy objects. See
      * {@link #expand(PolicySourceModelContext)} and {@link #isExpanded()} for more details.
      *
@@ -295,7 +295,7 @@ public class PolicySourceModel implements Cloneable {
      * as well, so after expanding this model a value of {@code true} is returned even if referenced models are not expanded yet. Thus each model
      * can be considered to be fully expanded only if all policy source models stored in PolicySourceModelContext instance are expanded, provided the
      * PolicySourceModelContext instance contains full set of policy source models.
-     * <p/>
+     * <br>
      * Every source model that references other policies must be expanded before it can be translated into a Policy object. See
      * {@link #expand(PolicySourceModelContext)} and {@link #containsPolicyReferences()} for more details.
      *
@@ -309,10 +309,10 @@ public class PolicySourceModel implements Cloneable {
      * Expands current policy model. This means, that if this model contains any (unexpanded) policy references, then the method expands those
      * references by placing the content of the referenced policy source models under the policy reference nodes. This operation merely creates
      * a link between this and referenced policy source models. Thus any change in the referenced models will be visible wihtin this model as well.
-     * <p/>
+     * <br>
      * Please, notice that the method does not check if the referenced models are already expanded nor does the method try to expand unexpanded
      * referenced models. This must be preformed manually within client's code. Consecutive calls of this method will have no effect.
-     * <p/>
+     * <br>
      * Every source model that references other policies must be expanded before it can be translated into a Policy object. See
      * {@link #isExpanded()} and {@link #containsPolicyReferences()} for more details.
      *

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -11,7 +11,7 @@
 /**
  * The root package of public policy API. The package contains interfaces expected to be
  * used in the most common policy processing use cases, such as scope policy retrieval.
- * <p/>
+ * <br>
  * Any policy API classes that are commonly used by other parts of policy API (such as 
  * policy-specific exceptions, constants etc.) are expected to be found in this package.
  */

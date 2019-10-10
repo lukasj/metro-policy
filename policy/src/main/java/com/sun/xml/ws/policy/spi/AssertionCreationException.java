@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -24,8 +24,8 @@ public final class AssertionCreationException extends PolicyException {
     
     /**
      * Constructs a new assertion creation exception with the specified detail message and cause.  
-     * <p/>
-     * Note that the detail message associated with {@code cause} is <emph>not</emph> automatically incorporated in
+     * <br>
+     * Note that the detail message associated with {@code cause} is <strong>not</strong> automatically incorporated in
      * this exception's detail message.
      *
      * @param assertionData the data provided for assertion creation
@@ -38,8 +38,8 @@ public final class AssertionCreationException extends PolicyException {
     
     /**
      * Constructs a new assertion creation exception with the specified detail message and cause.  
-     * <p/>
-     * Note that the detail message associated with {@code cause} is <emph>not</emph> automatically incorporated in
+     * <br>
+     * Note that the detail message associated with {@code cause} is <strong>not</strong> automatically incorporated in
      * this exception's detail message.
      *
      * @param assertionData the data provided for assertion creation

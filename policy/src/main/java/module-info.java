@@ -16,8 +16,7 @@ module com.sun.xml.ws.policy {
     requires transitive java.xml;
     requires java.logging;
 
-    requires com.sun.istack.runtime;
-    requires com.sun.xml.txw2;
+    requires com.sun.xml.bind;
 
     exports com.sun.xml.ws.policy;
     exports com.sun.xml.ws.policy.sourcemodel;

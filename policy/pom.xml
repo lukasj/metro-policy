@@ -80,23 +80,18 @@
         <spotbugs.exclude>${project.basedir}/exclude.xml</spotbugs.exclude>
         <spotbugs.skip>false</spotbugs.skip>
         <spotbugs.threshold>Low</spotbugs.threshold>
-        <spotbugs.version>3.1.12.1</spotbugs.version>
+        <spotbugs.version>3.1.12.2</spotbugs.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <istack.version>3.0.9</istack.version>
+        <istack.version>3.0.10</istack.version>
         <legal.doc.source>${project.basedir}/..</legal.doc.source>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.glassfish.jaxb</groupId>
-            <artifactId>txw2</artifactId>
-            <version>2.3.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.istack</groupId>
-            <artifactId>istack-commons-runtime</artifactId>
-            <version>${istack.version}</version>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.3.3-b01</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.woodstox</groupId>
@@ -214,20 +209,6 @@
                             </resources>
                         </configuration>
                     </execution>
-                    <execution>
-                        <id>add-test-resource</id>
-                        <phase>generate-test-resources</phase>
-                        <goals>
-                            <goal>add-test-resource</goal>
-                        </goals>
-                        <configuration>
-                            <resources>
-                                <resource>
-                                    <directory>src/main/resources</directory>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -236,6 +217,9 @@
                 <configuration>
                     <source>9</source>
                     <target>9</target>
+                    <compilerArguments>
+                        <Xlint:all/>
+                    </compilerArguments>
                 </configuration>
                 <executions>
                     <execution>
@@ -252,9 +236,20 @@
                             </excludes>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>default-testCompile</id>
+                        <configuration>
+                            <compilerArgs>
+                                <arg>--add-modules</arg>
+                                <arg>junit</arg>
+                                <arg>--add-reads</arg>
+                                <arg>com.sun.xml.ws.policy=junit</arg>
+                            </compilerArgs>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
-           <plugin>
+            <plugin>
                 <groupId>com.sun.istack</groupId>
                 <artifactId>istack-commons-maven-plugin</artifactId>
                 <executions>
@@ -319,7 +314,6 @@
                         <configuration>
                             <instructions>
                                 <Implementation-Build-Id>${project.version} - ${scmBranch}-${buildNumber}, ${timestamp}</Implementation-Build-Id>
-                                <_noee>true</_noee>
                             </instructions>
                         </configuration>
                     </execution>
@@ -362,10 +356,23 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Implementation-Build-Id>${project.version} - ${scmBranch}-${buildNumber}, ${timestamp}</Implementation-Build-Id>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <configuration>
                     <release>11</release>
-                    <doclint>none</doclint>
                 </configuration>
             </plugin>
         </plugins>

@@ -27,9 +27,7 @@ policy/copyright.txt
 .txt
 .bat
 .sh
-/CONTRIBUTING.md
 /LICENSE.md
-/README.md
 .commented
 /.auth
 .svnignore

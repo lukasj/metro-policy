@@ -81,7 +81,7 @@
         <spotbugs.exclude>${project.basedir}/exclude.xml</spotbugs.exclude>
         <spotbugs.skip>false</spotbugs.skip>
         <spotbugs.threshold>Low</spotbugs.threshold>
-        <spotbugs.version>3.1.12.2</spotbugs.version>
+        <spotbugs.version>4.0.0</spotbugs.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <istack.version>3.0.10</istack.version>
@@ -121,7 +121,7 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>3.1.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -147,6 +147,11 @@
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
                     <version>4.2.1</version>
+                    <configuration>
+                        <instructions>
+                            <_noextraheaders>true</_noextraheaders>
+                        </instructions>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>com.github.spotbugs</groupId>
@@ -161,7 +166,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.1.1</version>
+                    <version>3.2.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -313,8 +318,7 @@
                         </goals>
                         <configuration>
                             <instructions>
-                                <_removeheaders>Bnd-LastModified,Built-By,Include-Resource</_removeheaders>
-                                <Implementation-Build-Id>${project.version} - ${scmBranch}-${buildNumber}</Implementation-Build-Id>
+                                <Implementation-Build-Id>${project.version} - ${buildNumber}</Implementation-Build-Id>
                             </instructions>
                         </configuration>
                     </execution>
@@ -331,7 +335,6 @@
                         ${spotbugs.exclude}
                     </excludeFilterFile>
                     <fork>true</fork>
-                    <jvmArgs>-Xms64m -Xmx256m</jvmArgs>
                 </configuration>
             </plugin>
             <plugin>
@@ -361,10 +364,11 @@
                 <configuration>
                     <archive>
                         <manifest>
+                            <addDefaultEntries>false</addDefaultEntries>
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                         </manifest>
                         <manifestEntries>
-                            <Implementation-Build-Id>${project.version} - ${scmBranch}-${buildNumber}</Implementation-Build-Id>
+                            <Implementation-Build-Id>${project.version} - ${buildNumber}</Implementation-Build-Id>
                         </manifestEntries>
                     </archive>
                 </configuration>
@@ -373,6 +377,11 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultEntries>false</addDefaultEntries>
+                        </manifest>
+                    </archive>
                     <release>11</release>
                     <notimestamp>true</notimestamp>
                 </configuration>

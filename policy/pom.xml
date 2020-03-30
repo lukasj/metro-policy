@@ -84,7 +84,7 @@
         <spotbugs.version>4.0.0</spotbugs.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <istack.version>3.0.10</istack.version>
+        <istack.version>3.0.11</istack.version>
         <legal.doc.source>${project.basedir}/..</legal.doc.source>
     </properties>
 
@@ -92,7 +92,7 @@
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-impl</artifactId>
-            <version>2.3.3-b01</version>
+            <version>2.3.3</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.woodstox</groupId>

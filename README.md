@@ -6,6 +6,8 @@
 [//]: # "  "
 [//]: # " SPDX-License-Identifier: BSD-3-Clause "
 
+[![Build Status](https://travis-ci.com/eclipse-ee4j/metro-policy.svg?branch=master)](https://travis-ci.com/eclipse-ee4j/metro-policy)
+
 # WS-Policy implementation
 
 This project is part of [Eclipse Metro project](https://projects.eclipse.org/projects/ee4j.metro).
